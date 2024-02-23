@@ -1,0 +1,46 @@
+<script> if src ignore content
+let //create variable, var - depricated
+
+variables
+	number (+-2^53)
+	bigint (any length)
+	string
+	boolean
+	null
+	undefined
+	object
+	symbol (unique identificator)
+
+Naming can not contain "-" or start from number
+
+const NAMING_EXAMPLE;
+if const is not known before script execution:
+	const namingExample
+
+typeof x or typeof (x)
+	returns type (if null returns object)
+
+parseInt (number, basis) //basis = 2, 10, 16...
+	if parseInt ("SomeText") - NaN (Not a number)
+parseFloat (number)
+toFixed(2) //round to two decimal places
+
+alert() //ok button
+confirm() //ok and cancel buttons, if ok - returns true else - false
+prompt() //text field, ok and cancel buttons, if ok - returns text field else - false
+
+use strict //on top of file or function - uses newer js version (old doesn`t works)
+
+document.write(<h1>Qwerty</h1>) //dynamic content adding
+
+var element = document.getElementById("myElement");
+element.innerHTML = "<p>New content</p>";
+
+switch(income) {
+	case 1:
+	break;
+	default:
+	break;
+}
+
+condition ? returnIfTrue : returnIfFalse

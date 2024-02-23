@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KI-41 Chaplia 1_3</title>
+</head>
+<body>
+	<script>
+		"use strict";
+		let numberOfAngles = parseInt(prompt("Введіть кількість кутів: ", ""));
+		let radius = parseInt(prompt("Введіть радіус: ", ""));
+		let sideLength = 2 * radius * Math.tan(Math.PI / numberOfAngles);
+		let perimeter = sideLength * numberOfAngles;
+		let area = (1 / 2) * numberOfAngles * sideLength * radius;
+		alert(`Довжина сторони = ${sideLength.toFixed(2)} \n Площа = ${area.toFixed(2)} \n Периметр = ${perimeter.toFixed(2)}`);
+	</script>
+</body>
+</html>
