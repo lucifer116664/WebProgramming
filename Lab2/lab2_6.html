@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KI-41 Chaplia 2_6</title>
+</head>
+<body>
+	<script> 
+		"use strict";
+		let guess = Math.random() * 100; // генерація випадкового числа
+		guess = Math.floor(guess); // відкидання дробової частини
+		//let f = true;
+		let number;
+		let count = 0;
+		let answer = confirm("Зіграємо?");
+		if (answer) {
+			while (true) {
+				number = parseInt(prompt("Введіть число:"));
+				count++;
+				if (number == guess) {
+					alert("Ви вгадали\n кількість спроб: " + count);
+					//f = false;
+					break;
+				}
+				else if (number > guess) {
+					alert("Число менше, спробуйте ще раз");
+				}
+				else {
+					alert("Число більше, спробуйте ще раз");
+				}
+			}
+		}
+		else 
+			alert("Шкода.\nМожливо іншим разом?");
+	</script>
+</body>
+</html>

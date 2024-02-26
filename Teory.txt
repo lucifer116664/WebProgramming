@@ -28,6 +28,7 @@ toFixed(2) //round to two decimal places
 alert() //ok button
 confirm() //ok and cancel buttons, if ok - returns true else - false
 prompt() //text field, ok and cancel buttons, if ok - returns text field else - false
+	//args - question, default value
 
 use strict //on top of file or function - uses newer js version (old doesn`t works)
 
@@ -44,3 +45,6 @@ switch(income) {
 }
 
 condition ? returnIfTrue : returnIfFalse
+
+for of - iterable objects(arrays)
+for in - by key
