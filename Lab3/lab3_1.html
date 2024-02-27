@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KI-41 Chaplia 3_1</title>
+</head>
+<body>
+	<script>
+		"use strict";
+
+		function weekDay(size, day, color) {
+			document.write(`<div style="font-size: ${size}px; color: ${color};">${day}</div>`);
+		}
+
+		let today = new Date();
+		let hours = today.getHours();
+		let minute = today.getMinutes();
+
+		if (minute < 10)
+			minute = "0" + minute;
+		if (hours < 12) {
+			var time12 = hours + ":" + minute + " am ";
+		}
+		else {
+			var time12 = hours - 12 + ":" + minute + " pm ";
+		}
+
+		console.log("поточний час -", time12);
+		alert("поточний час -" + time12);
+
+		weekDay(70, "Monday", "red");
+		weekDay(60, "Tuesday", "orange");
+		weekDay(50, "Wednesday", "yellow");
+		weekDay(40, "Thursday", "green");
+		weekDay(30, "Friday", "blue");
+		weekDay(20, "Saturday", "purple");
+		weekDay(10, "Sunday", "indigo");
+	</script>
+</body>
+</html>
