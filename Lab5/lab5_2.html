@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KI-41 Chaplia 5_2</title>
+</head>
+<body>
+	<script>
+		let str = "application qwerty pomelo operate cop laps";
+
+		let words = str.split(" ");
+		let countP = 0
+		
+		for(let i = 0; i < words.length; i++) {
+			if(words[i][1] == 'p')
+				countP++;
+
+			words[i] = words[i].slice(0, -1);
+		}
+
+		str = words.join(" ");
+
+		alert(`String: ${str}\n\"p\" is second matches: ${countP}`);
+	</script>
+</body>
+</html>

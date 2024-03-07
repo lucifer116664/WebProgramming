@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KI-41 Chaplia 5_3</title>
+</head>
+<body>
+	<script>
+		const ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+		let str = prompt("Enter text: ", "abcdez");
+		let result = "";
+
+		for(let char of str) {
+			let charIndex = ALPHABET.indexOf(char.toLowerCase());
+			charIndex != ALPHABET.length - 1 ? resultIndex = charIndex + 1 : resultIndex = 0;
+			result += ALPHABET[resultIndex];
+		}
+
+		alert(`String: ${str}\nResult: ${result}`);
+	</script>
+</body>
+</html>
