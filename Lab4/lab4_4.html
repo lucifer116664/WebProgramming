@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KI-41 Chaplia 4_4</title>
+</head>
+<body>
+	<script>
+		fruits=['apple','pineapple','mango','melon','grape'];
+		citrus=['orange','lemon','lime'];
+
+		document.write(fruits + "<br>");
+		document.write(citrus + "<br>");
+		document.write(fruits.concat(citrus) + "<br>");
+
+		fruits.splice(3, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+		document.write(fruits + "<br>");
+
+		fruits.splice(-3);
+		document.write(fruits + "<br>");
+
+		document.write(fruits.sort() + "<br>");
+		document.write(fruits.reverse() + "<br>");
+
+		fruits.sort(function(a, b) {
+		    return a.length - b.length;
+		});
+		document.write(fruits + "<br>");
+	</script>
+</body>
+</html>

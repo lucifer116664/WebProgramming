@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KI-41 Chaplia 4_2</title>
+</head>
+<body>
+	<script>
+		let array = new Array(15);
+		
+		for(let i = 0; i < array.length; i++) {
+			array[i] = Math.floor(Math.random() * 100);
+		}
+
+		let indexSwap = prompt("Масив:\n" + array.join("  ") + "\nВведіть indexSwap", 0);
+
+		let minElement = array[0];
+		let minIndex = 0;
+		for(let i = 1; i < array.length; i++) {
+			if(array[i] < minElement) {
+				minElement = array[i];
+				minIndex = i;
+			}
+		}
+
+		array[minIndex] = array[indexSwap];
+		array[indexSwap] = minElement;
+
+		alert("Масив:\n" + array.join("  "));
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KI-41 Chaplia 4_3</title>
+</head>
+<body>
+	<script>
+		const D = 70, F = 40;
+		let array = new Array(15);
+		
+		for(let i = 0; i < array.length; i++) {
+			array[i] = Math.floor(Math.random() * 100);
+		}
+
+		document.write(`Масив: ${array.join("  ")}<br>`);
+
+		let filteredArray = array.filter((num, index) => index % 2 == 1 && num > D);
+		let pairIndexMoreD = filteredArray.reduce((sum, num) => sum + num, 0) / filteredArray.length
+
+		let countLessThanF = array.filter(num => num < F).length;
+
+		document.write(`Середнє арифметичне чисел, більших за D(${D}) і на непарних місцях: ${pairIndexMoreD.toFixed(2)}<br>`);
+		document.write(`Кількість чисел, не більших за F(${F}): ${countLessThanF}<br>`);
+	</script>
+</body>
+</html>

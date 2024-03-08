@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KI-41 Chaplia 4_1</title>
+</head>
+<body>
+	<script>
+		let treag = new Array();
+		let kvd = new Array();
+		
+		for(let i = 1; i <= 10; i++) {
+			treag.push(i * (i + 1) / 2);
+
+			kvd.push(i ** 2);
+		}
+
+		let rez = treag.concat(kvd);
+
+		document.write(`Масив treag:\t${treag.join("  ")}<br>`);
+		document.write(`Масив kvd:\t${kvd.join("  ")}<br>`);
+		document.write(`Масив rez:\t${rez.join("  ")}<br>`);
+
+		rez.reverse();
+
+		document.write(`Масив reverse rez:\t${rez.join("  ")}`);
+	</script>
+</body>
+</html>
