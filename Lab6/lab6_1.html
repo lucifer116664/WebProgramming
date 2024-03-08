@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KI-41 Chaplia 6_1</title>
+</head>
+<body>
+	<script>
+		const router = {
+			type : "wireless",
+			interfaceType : "ethernet",
+			mobileSupport : true,
+			sdSupport : false,
+
+			info: function(){
+				alert(`Type: ${this.type}\nInterface: ${this.interfaceType}\nMobile communication support: ${this.mobileSupport}\n SD card support: ${this.sdSupport}`)
+			}
+		};
+
+		router.info();
+	</script>
+</body>
+</html>

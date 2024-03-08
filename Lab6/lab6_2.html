@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KI-41 Chaplia 6_2</title>
+</head>
+<body>
+	<script>
+		function Router (type, interfaceType, mobileSupport, sdSupport) {
+			this.type = type;
+			this.interfaceType = interfaceType;
+			this.mobileSupport = mobileSupport;
+			this.sdSupport = sdSupport;
+
+			Object.defineProperty(this, 'mobileSupport', {
+		        get: function() {
+		        	if(this._mobileSupport)
+		        		return "supports";
+		            else
+		            	return "doesn\'t support";
+		        },
+		        set: function(value) {
+		        	if(typeof value == 'boolean')
+		            	this._mobileSupport = value;
+		            else
+		            	alert("Wrong data type (mobile suppurt is not boolean)!!!");
+		        }
+		    });
+
+		    Object.defineProperty(this, 'sdSupport', {
+		        get: function() {
+		            if(this._mobileSupport)
+		        		return "supports";
+		            else
+		            	return "doesn\'t support";
+		        },
+		        set: function(value) {
+		        	if(typeof value == 'boolean')
+		            	this._sdSupport = value;
+		            else
+		            	alert("Wrong data type (SD suppurt is not boolean)!!!");
+		        }
+		    });
+		}
+
+
+		Router.prototype.marketEntryDate = "11.15.2012"
+		Router.prototype.info = function () {
+			document.write (`Type: ${this.type}<br>Interface: ${this.interfaceType}<br>Mobile communication: ${this.mobileSupport}<br>SD card: ${this.sdSupport}<br>Market entry date: ${Router.prototype.marketEntryDate}`);
+		};
+
+		let myRouter = new Router("wireless", "ethernet");
+
+		myRouter.mobileSupport = true;
+		myRouter.sdSupport = false;
+		//myRouter.mobileSupport = "asd";
+		myRouter.info();
+	</script>
+</body>
+</html>
