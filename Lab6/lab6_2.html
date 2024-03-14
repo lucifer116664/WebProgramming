@@ -29,7 +29,7 @@
 
 		    Object.defineProperty(this, 'sdSupport', {
 		        get: function() {
-		            if(this._mobileSupport)
+		            if(this._sdSupport)
 		        		return "supports";
 		            else
 		            	return "doesn\'t support";
@@ -44,9 +44,9 @@
 		}
 
 
-		Router.prototype.marketEntryDate = "11.15.2012"
+		Router.prototype.releaseDate = "11.15.2012"
 		Router.prototype.info = function () {
-			document.write (`Type: ${this.type}<br>Interface: ${this.interfaceType}<br>Mobile communication: ${this.mobileSupport}<br>SD card: ${this.sdSupport}<br>Market entry date: ${Router.prototype.marketEntryDate}`);
+			document.write (`Type: ${this.type}<br>Interface: ${this.interfaceType}<br>Mobile communication: ${this.mobileSupport}<br>SD card: ${this.sdSupport}<br>Release date: ${Router.prototype.releaseDate}`);
 		};
 
 		let myRouter = new Router("wireless", "ethernet");

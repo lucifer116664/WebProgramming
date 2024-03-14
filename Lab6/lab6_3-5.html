@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KI-41 Chaplia 6_3-5</title>
+</head>
+<body>
+	<script>
+		document.write("/////////////////////////////6_3////////////////////////<br>");
+
+		class Router {
+			constructor(type, interfaceType, mobileSupport, sdSupport) {
+				this.type = type;
+				this.interfaceType = interfaceType;
+				this.mobileSupport = mobileSupport;
+				this.sdSupport = sdSupport;
+			}
+
+			setType(type) {
+				if(type == "wireless" || type == "wired")
+					this.type = type;
+				else
+					this.type = "unknown";
+			}
+
+			getMobileSupport() {
+				return this.mobileSupport ? "supports" : "doesn\'t support";
+			}
+
+			getSdSupport() {
+				return this.sdSupport ? "supports" : "doesn\'t support"
+			}
+
+
+			info() {
+				document.write (`Type: ${this.type}<br>Interface: ${this.interfaceType}<br>Mobile communication: ${this.getMobileSupport()}<br>SD card: ${this.getSdSupport()}<br>`);
+			};
+		}
+
+
+		const myRouter = new Router("wired", "ethernet", true, false);
+		myRouter.setType("wireless");
+		myRouter.info();
+
+		document.write("/////////////////////////////6_4///////////////////////////<br>");
+
+		class ExtendedRouter extends Router {
+			constructor(type, interfaceType, mobileSupport, sdSupport, releaseDate, price) {
+				super(type, interfaceType, mobileSupport, sdSupport);
+				this.releaseDate = releaseDate;
+				this.price = price;
+			}
+
+			info() {
+				super.info();
+				document.write (`Release date: ${this.releaseDate}<br>Price: ${this.price}<br>`);
+			}
+		}
+
+		const myExtRouter = new ExtendedRouter("wired", "ethernet", true, false, '15.11.2012', 600);
+
+		myExtRouter.setType("wireless");
+		myExtRouter.info();
+
+		document.write("/////////////////////////////6_5///////////////////////////<br>");
+
+		const routers = [
+		    new ExtendedRouter("wired", "ethernet", false, false, '15.11.2012', 400),
+		    new ExtendedRouter("wireless", "WiFi", true, false, '20.05.2015', 500),
+		    new ExtendedRouter("wired", "ethernet", false, true, '11.09.2010', 800),
+		    new ExtendedRouter("wired", "ethernet", true, true, '21.12.2019', 1000),
+		    new ExtendedRouter("wireless", "WiFi", true, true, '08.07.2018', 1200)
+		];
+
+		const maxPriceRouter = routers.reduce((max, current) => current.price > max.price ? current : max);
+
+		const minPriceRouter = routers.reduce((min, current) => current.price < min.price ? current : min);
+
+		const totalCost = routers.reduce((sum, current) => sum + current.price, 0);
+
+		const averageCost = totalCost / routers.length;
+
+		const aboveAverageCount = routers.filter(router => router.price > averageCost).length;
+
+		document.write(`Maximal price router:<br>`);
+		maxPriceRouter.info();
+		document.write(`Minimal price router:<br>`);
+		minPriceRouter.info();
+		document.write(`Total cost: ${totalCost}<br>`);
+		document.write(`Average cost: ${averageCost}<br>`);
+		document.write(`Routers with price above average cost: ${aboveAverageCount}<br>`);
+	</script>
+</body>
+</html>
